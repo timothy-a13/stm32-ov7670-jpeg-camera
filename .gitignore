@@ -1,0 +1,27 @@
+# Build outputs
+Debug/
+Release/
+build/
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.o
+*.d
+*.su
+*.cyclo
+
+# Local/editor files
+.agents/
+.codex/
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# PC receiver generated outputs
+script/ov7670_frame*
+script/tmp.txt
+
