@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README.zh.md)
 
-This project captures images from an OV7670 camera module with a NUCLEO-F446RE board, compresses the RGB565 frame into JPEG on the STM32F446RE, and sends the compressed image to a PC. The PC-side Python script receives the binary frame, verifies the checksum, saves the JPEG payload, and decodes it into a viewable image file.
+This project captures images from an OV7670 camera module with a NUCLEO-F446RE board, compresses the RGB565 frame into JPEG on the STM32F446RE, and sends the compressed image to a PC. The PC-side Python script receives the binary frame, verifies the checksum, saves the JPEG payload, and decodes it into a viewable image.
 
 ![OV7670 result](assets/result.png)
 
