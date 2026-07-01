@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README.zh.md)
 
-This project captures images from an OV7670 camera module with a NUCLEO-F446RE board, compresses the RGB565 frame into JPEG on the STM32F446RE, and sends the compressed image to a PC over UART. The PC-side Python script receives the binary frame, verifies the checksum, saves the JPEG payload, and decodes it into an image file.
+This project captures images from an OV7670 camera module with a NUCLEO-F446RE board, compresses the RGB565 frame into JPEG on the STM32F446RE, and sends the compressed image to a PC. The PC-side Python script receives the binary frame, verifies the checksum, saves the JPEG payload, and decodes it into a viewable image file.
 
 ![OV7670 result](assets/result.png)
 
@@ -12,7 +12,7 @@ This project captures images from an OV7670 camera module with a NUCLEO-F446RE b
 - OV7670 parallel camera capture through DCMI + DMA.
 - OV7670 SCCB control implemented with GPIO bit-banging.
 - Camera XCLK generated from PA8 / MCO1.
-- Input frame format is RGB565 at 160 x 120.
+- Input frame format is RGB565.
 - Low-memory baseline JPEG encoder designed for MCU SRAM limits.
 - JPEG processing is block based: RGB565 is converted to YCbCr one 8 x 8 block at a time, then immediately passed to DCT and quantization.
 - Huffman tables are generated dynamically from the current image statistics; the encoder does not use the default JPEG Huffman tables.
@@ -52,8 +52,6 @@ Important files:
 - OV7670 camera module with 8-bit parallel output.
 - Jumper wires.
 - USB cable for ST-LINK power, flashing, debugging, and UART virtual COM port.
-
-Use 3.3 V logic. Do not connect OV7670 signal pins to 5 V.
 
 ### Pin Mapping
 
