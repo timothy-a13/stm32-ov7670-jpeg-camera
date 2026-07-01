@@ -17,7 +17,7 @@ This project captures images from an OV7670 camera module with a NUCLEO-F446RE b
 - JPEG processing is block based: RGB565 is converted to YCbCr one 8 x 8 block at a time, then immediately passed to DCT and quantization.
 - Huffman tables are generated dynamically from the current image statistics; the encoder does not use the default JPEG Huffman tables.
 - UART frame protocol includes magic bytes, image metadata, payload length, and checksum.
-- PC script supports JPEG payloads and keeps backward-compatible RGB565 / YUV422 decode paths.
+- PC script supports JPEG payloads and also provides RGB565 / YUV422 decoding flows.
 
 ## Project Layout
 
