@@ -17,7 +17,7 @@
 - JPEG 處理採 8 x 8 block 流程：RGB565 只針對目前 block 轉成 YCbCr，接著立刻做 DCT 與 quantization。
 - Huffman table 會依照當前影像統計結果動態產生，不使用 JPEG 預設 Huffman table。
 - UART frame protocol 包含 magic bytes、影像 metadata、payload 長度與 checksum。
-- PC 端腳本支援 JPEG payload，同時保留原本 RGB565 / YUV422 的解碼路徑。
+- PC 端腳本支援 JPEG payload，同時支援 RGB565 / YUV422 的解碼程序。
 
 ## 專案結構
 
