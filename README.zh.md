@@ -1,8 +1,8 @@
 # NUCLEO-F446RE OV7670 JPEG Camera
 
-[English README](README.md)
+[中文](./README.zh.md) | [English](./README.md)
 
-這個專案使用 NUCLEO-F446RE 開發板連接 OV7670 攝影機模組，透過 STM32F446RE 擷取 RGB565 影像，接著在 MCU 端進行 JPEG 壓縮，最後經由 UART 傳送到 PC。PC 端 Python 腳本會接收 binary frame、驗證 checksum、儲存 JPEG payload，並解壓縮成一般圖片檔。
+這個專案使用 NUCLEO-F446RE 開發板連接 OV7670 攝影機模組，透過 STM32F446RE 擷取 RGB565 影像，接著在 MCU 端進行 JPEG 壓縮，最後傳送到 PC。PC 端 Python 腳本會接收 binary frame、驗證 checksum、儲存 JPEG payload，並解壓縮成一般可視圖片。
 
 ![OV7670 result](assets/result.png)
 
@@ -12,7 +12,7 @@
 - OV7670 影像資料透過 DCMI + DMA 擷取。
 - OV7670 SCCB 控制以 GPIO bit-bang 實作。
 - 相機 XCLK 由 PA8 / MCO1 輸出。
-- 輸入影像格式為 RGB565，解析度為 160 x 120。
+- 輸入影像格式為 RGB565。
 - JPEG encoder 針對 MCU SRAM 限制設計，避免大量暫存。
 - JPEG 處理採 8 x 8 block 流程：RGB565 只針對目前 block 轉成 YCbCr，接著立刻做 DCT 與 quantization。
 - Huffman table 會依照當前影像統計結果動態產生，不使用 JPEG 預設 Huffman table。
@@ -52,8 +52,6 @@ STM32F446RETX_FLASH.ld
 - OV7670 攝影機模組，需支援 8-bit parallel output。
 - 杜邦線。
 - USB 線，用於 ST-LINK 供電、燒錄、除錯與 UART virtual COM port。
-
-請使用 3.3 V 邏輯準位。不要將 OV7670 訊號腳接到 5 V。
 
 ### 接線表
 
